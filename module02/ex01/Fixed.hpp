@@ -2,6 +2,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed {
 private:
@@ -9,19 +10,19 @@ private:
     static const int fractionalBits = 8;
 
 public:
-    Fixed(); // デフォルトコンストラクタ
-    Fixed(const int value); // 整数を受け取るコンストラクタ
-    Fixed(const float value); // 浮動小数点数を受け取るコンストラクタ
-    Fixed(const Fixed &other); // コピーコンストラクタ
-    Fixed &operator=(const Fixed &other); // コピー代入演算子オーバーロード
-    ~Fixed(); // デストラクタ
+    Fixed();
+    Fixed(const int value);
+    Fixed(const float value);
+    Fixed(const Fixed &other);
+    Fixed &operator=(const Fixed &other);
+    ~Fixed();
 
-    int getRawBits() const; // 生の固定小数点値を返すメンバ関数
-    void setRawBits(int const raw); // 生の固定小数点値を設定するメンバ関数
-    float toFloat() const; // 固定小数点値を浮動小数点数に変換するメンバ関数
-    int toInt() const; // 固定小数点値を整数に変換するメンバ関数
+    int getRawBits() const;
+    void setRawBits(int const raw);
+    float toFloat() const;
+    int toInt() const;
 };
 
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed); // 挿入演算子のオーバーロード
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
-#endif // FIXED_HPP
+#endif

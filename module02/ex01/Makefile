@@ -1,8 +1,8 @@
 NAME = a.out
 SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
-CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
