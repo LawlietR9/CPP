@@ -27,10 +27,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
         return;
 
     ofs << "      /\\" << std::endl;
-    ofs << "     /\*\\" << std::endl;
-    ofs << "    /\*\*\\" << std::endl;
-    ofs << "   /\*\*\*\\" << std::endl;
-    ofs << "  /\*\*\*\*\\" << std::endl;
+    ofs << "     /\\*\\" << std::endl;
+    ofs << "    /\\*\\*\\" << std::endl;
+    ofs << "   /\\*\\*\\*\\" << std::endl;
+    ofs << "  /\\*\\*\\*\\*\\" << std::endl;
     ofs << "      | |" << std::endl;
     ofs.close();
 }
