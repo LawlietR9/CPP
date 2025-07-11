@@ -1,5 +1,18 @@
 #include "Intern.hpp"
 
+// Helper functions to create form instances
+AForm* createShrubberyCreationForm(const std::string& target) {
+    return new ShrubberyCreationForm(target);
+}
+
+AForm* createRobotomyRequestForm(const std::string& target) {
+    return new RobotomyRequestForm(target);
+}
+
+AForm* createPresidentialPardonForm(const std::string& target) {
+    return new PresidentialPardonForm(target);
+}
+
 Intern::Intern() {}
 
 Intern::Intern(const Intern& other) {
@@ -21,9 +34,9 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target) 
     };
 
     AForm* (*formCreators[])(const std::string&) = {
-        [](const std::string& target) { return new ShrubberyCreationForm(target); },
-        [](const std::string& target) { return new RobotomyRequestForm(target); },
-        [](const std::string& target) { return new PresidentialPardonForm(target); }
+        &createShrubberyCreationForm,
+        &createRobotomyRequestForm,
+        &createPresidentialPardonForm
     };
 
     for (int i = 0; i < 3; ++i) {
