@@ -6,7 +6,6 @@
 #include "C.hpp"
 
 Base * generate(void) {
-	srand(time(NULL));
 	int i = rand() % 3;
 	if (i == 0)
 		return new A;
@@ -44,6 +43,7 @@ void identify(Base& p) {
 }
 
 int main() {
+    srand(time(NULL));
 	Base *p = generate();
 	identify(p);
 	identify(*p);
